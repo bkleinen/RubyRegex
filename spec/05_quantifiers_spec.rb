@@ -15,7 +15,16 @@ describe "quantifiers" do
     (extensions =~ "jpegs").should == nil 
     (extensions =~ "it").should == nil
   end
-  
+  it "are greedy by default" do
+    str = "Where the sea meets the moon-blanched land"
+    md = /.*the/.match(str)
+    md[0].should == "Where the sea meets the"
+  end
+  it "but can be made non-greedy" do
+    str = "Where the sea meets the moon-blanched land"
+    md = /.*?the/.match(str)
+    md[0].should == "Where the"
+  end
   
   
 end
