@@ -26,5 +26,4 @@ describe "quantifiers" do
     md[0].should == "Where the"
   end
   
-  
 end

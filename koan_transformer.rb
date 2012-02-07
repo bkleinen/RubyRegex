@@ -10,7 +10,6 @@ class KoanTransformer
     md = MethodRegex.match(line)
     return  md[1]+"it \""+md[2].gsub("test_","").gsub(/_/," ")+'" do' if md
     md = AssertRegex.match(line)
- #   return line.gsub(AssertRegex,'\1\2.should == __') if md  
     return md[1]+md[2]+".should == __" if md  
     return line
   end
